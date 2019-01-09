@@ -1,0 +1,21 @@
+Arguments for PTHREADS version
+
+    graph filename
+    nodes
+    threshold
+    d
+    threads
+
+Example:
+./pagerank_pthreads wed_Google.txt 916428 0.0001 0.85 8
+
+
+Arguments for serial version
+
+    graph filename
+    nodes
+    threshold
+    d
+
+Example:
+./pagerank_serial web-Google.txt 916428 0.0001 0.85
