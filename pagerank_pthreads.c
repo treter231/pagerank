@@ -19,16 +19,16 @@
 #define maxThreads 64
 
 /******************** Defines ****************/
-// Number of nodes
+// число узлов
 int N, num_threads;
 
 // Границы и параметр сходимости алгоритма d  
 double threshold, d;
 
-//Таблица деревьев
+//Таблица потоков
 pthread_t *Threads;
 
-// Таблица с данными деревьев 
+// Таблица с данными потоков
 Thread *Threads_data;
 
 // Таблица данных узла
@@ -37,7 +37,7 @@ pthread_mutex_t lockP = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t locksum = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t lockmax = PTHREAD_MUTEX_INITIALIZER;
 
-// Количество деревьев
+// Количество потоков
 int num_threads;
 
 // Количество итераций
@@ -54,7 +54,7 @@ void Threads_Allocation()
 	int i;
 	double N_split =  (double) N / num_threads;
 	
-	// Выделение памяти для деревьев
+	// Выделение памяти для потоков
 	Threads = (pthread_t *)malloc(num_threads * sizeof(pthread_t));
 
 	// Хранит данные дерева	
@@ -292,7 +292,7 @@ void* Pagerank_Parallel(void* arg)
 	return 0;
 }
 
-/***** Вычислить локальный максимум (максимум данных дерева) *****/
+/***** Вычислить локальный максимум (максимум данных потока) *****/
 void* Local_Max(void* arg)
 {
 

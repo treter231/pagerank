@@ -1,9 +1,9 @@
 /******************** Structs ********************/
 
-/***** Struct for timestamps *****/
+/***** Структура для временных меток *****/
 struct timeval start,end;
 
-/***** Struct used for Threads data *****/
+/***** Структура, используемая для данных потоков *****/
 
 typedef struct
 {
@@ -11,7 +11,7 @@ typedef struct
 	int start, end;
 } Thread; 
 
-/***** Struct used for Nodes data *****/
+/***** Структура, используемая для данных узлов *****/
 
 typedef struct
 {
